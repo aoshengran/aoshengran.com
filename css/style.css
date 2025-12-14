@@ -1,0 +1,259 @@
+/* Fonts */
+@font-face {
+    font-family: "Passenger Sans";
+    src: url("../fonts/passenger-sans-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Passenger Sans";
+    src: url("../fonts/passenger-sans-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "Passenger Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+/* Layout */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.15s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* Intro/Header */
+.intro {
+    margin-bottom: 80px;
+}
+
+.intro h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.intro p {
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    max-width: 600px;
+}
+
+.intro .signature {
+    margin-top: 24px;
+    opacity: 0.7;
+}
+
+/* Projects */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.project-image {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+a.project-image:hover img {
+    transform: scale(1.02);
+}
+
+.project-info h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: inline;
+}
+
+.project-info h2 a {
+    text-decoration: none;
+}
+
+.project-info h2 a:hover {
+    text-decoration: underline;
+}
+
+.project-info .year {
+    font-size: 1rem;
+    opacity: 0.5;
+    margin-left: 8px;
+}
+
+.project-info > p {
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+.project-info .links {
+    font-size: 0.875rem;
+    margin-top: 12px;
+    line-height: 1.8;
+}
+
+.project-info .collaborators {
+    font-size: 0.8125rem;
+    opacity: 0.5;
+    margin-top: 16px;
+}
+
+.project-info .features {
+    margin-top: 12px;
+    padding-left: 20px;
+    font-size: 1rem;
+}
+
+.project-info .features li {
+    margin-bottom: 4px;
+}
+
+/* Expanded project (Sprout) */
+.project-expanded .project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.project-expanded .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-expanded .detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #f5f5f5;
+}
+
+.project-expanded .detail p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    margin-top: 120px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+footer p {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    main {
+        padding: 120px 40px 160px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1.25rem;
+    }
+
+    .project {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: start;
+    }
+
+    .project-expanded {
+        grid-template-columns: 1fr;
+    }
+
+    .project-expanded .project-image {
+        max-width: 100%;
+    }
+
+    .project-expanded .project-info {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects {
+        gap: 100px;
+    }
+
+    .project {
+        gap: 48px;
+    }
+
+    .project-expanded .project-details {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #f0f0f0;
+        background-color: #111;
+    }
+
+    .project-image {
+        background: #222;
+    }
+
+    footer {
+        border-top-color: #333;
+    }
+}
